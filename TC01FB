@@ -1,0 +1,18 @@
+public static void main(String[] args) throws EncryptedDocumentException, IOException {
+
+		System.setProperty("webdriver.chrome.driver", Paths.driverpath);
+
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+
+		driver.get(Paths.facebookLogin);
+
+		Login_Fb pom = new Login_Fb(driver);
+		BaseClass b = new BaseClass();
+
+		pom.enterUsername(b.excelsheet(0, 0));
+		pom.enterpassword(b.excelsheet(0, 1));
+		pom.clicklogin();
+		
+
+	}
