@@ -1,0 +1,21 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import path.Paths;
+
+public class TestClass3 {
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.chrome.driver", Paths.driverpath);
+
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+
+		driver.get(Paths.facebook);
+
+		PomDemo pom = new PomDemo(driver);
+
+		// TC01
+pom.setFirstName("Vaibhav");
+pom.setLastName("Birajdar");
+	}
